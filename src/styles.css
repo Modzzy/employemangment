@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+
+@font-face
+{
+    font-family: 'Tajawal';
+    src:url("./assets/fonts/Tajawal/Tajawal-Regular.ttf");
+}
+
+*
+{
+    box-sizing: border-box;
+    font-family: 'Tajawal';
+    font-size: 1rem;
+}
+
+body,html
+{
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+

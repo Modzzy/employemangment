@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,9 +11,10 @@ export class LoginComponent implements OnInit {
   // variables
   loginForm: FormGroup;
   submitted: boolean;
+  failedAttempt:boolean;
   // end of the variables
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder , private auth : AuthService) { }
 
   ngOnInit() {
 
@@ -22,23 +24,28 @@ export class LoginComponent implements OnInit {
   private buildForm() 
   {
     this.loginForm = this.fb.group({
-      'email'    :['', Validators.required],
+      'userName'    :['', Validators.required],
       'password':['', Validators.required]
     })
   }
 
-  private login()
+  public login()
   {
     this.submitted = true;
     if(this.loginForm.valid)
     {
       // carry out the authentication process
+      this.auth.authenticate(this.userName.value, this.password.value)
+      .subscribe((token) => {
+        // case success
+        console.log(token);
+      },(error) => {error.error.error === 'invalid_grant' ? this.failedAttempt = true : this.failedAttempt = false; } );
     }
   }
 
-  get email()
+  get userName()
   {
-    return this.loginForm.get('email');
+    return this.loginForm.get('userName');
   }
   get password()
   {

@@ -6,7 +6,7 @@
     <form [formGroup] = "loginForm" (ngSubmit) ="login()">
       <div class="form-group">
         <label for="username">اسم المستخدم</label>
-        <input formControlName ="email" [ngClass]="{'is-invalid': !email.valid && submitted}" class="form-control" id="username">
+        <input formControlName ="userName" [ngClass]="{'is-invalid': !userName.valid && submitted}" class="form-control" id="username">
         <div class="invalid-feedback">
             من فضلك قم بأدخال اسم المستخدم.
         </div>
@@ -17,6 +17,10 @@
           <div class="invalid-feedback">
               من فضلك قم بأدخال كلمة المرور.
           </div>
+      </div>
+      <br>  
+      <div *ngIf="failedAttempt" class="alert alert-danger" role="alert">
+       هناك خطأ في كلمة المرور او اسم المستخدم
       </div>
       <br>
       <button class="btn btn-primary">

@@ -6,12 +6,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PublicComponent } from './layouts/public/public.component';
 import { LoginComponent } from './public/login/login.component';
+import { AuthenticatedComponent } from './layouts/authenticated/authenticated.component';
+import { HeaderComponent } from './shared/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PublicComponent,
-    LoginComponent
+    LoginComponent,
+    AuthenticatedComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

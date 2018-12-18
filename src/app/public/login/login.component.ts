@@ -11,10 +11,10 @@ export class LoginComponent implements OnInit {
   // variables
   loginForm: FormGroup;
   submitted: boolean;
-  failedAttempt:boolean;
+  failedAttempt: boolean;
   // end of the variables
 
-  constructor(private fb: FormBuilder , private auth : AuthService) { }
+  constructor(private fb: FormBuilder , private auth: AuthService) { }
 
   ngOnInit() {
 

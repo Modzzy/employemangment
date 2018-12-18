@@ -1,0 +1,7 @@
+.grid-container
+{
+    display:grid;
+    grid-template-rows: 55px auto;
+    width: 100%;
+    height: 100%;
+}

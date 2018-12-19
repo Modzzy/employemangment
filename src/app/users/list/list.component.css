@@ -1,0 +1,15 @@
+.table-header 
+{
+padding: 5px;
+margin-bottom: 5px;
+}
+.table-header h5
+{
+    display: inline-block;
+    width: 80%;
+}
+.table-header button
+{
+    display: inline-block;
+    width: 20%;
+}

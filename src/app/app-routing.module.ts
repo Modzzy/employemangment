@@ -14,8 +14,11 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'authenticated',
+    path: '',
     component: AuthenticatedComponent,
+    children:[
+      {path: 'users' , loadChildren: './users/users.module#UsersModule'}
+    ]
 
   }
 ];
